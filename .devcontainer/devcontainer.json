@@ -1,0 +1,40 @@
+{
+    "name": "terraform-cohort-devcontainer",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "ms-azuretools.vscode-docker",
+                "hashicorp.terraform",
+                "hashicorp.hcl",
+                // "googlecloudtools.cloudcode", // not supported on arm based machines
+                "esbenp.prettier-vscode",
+                "MarkLarah.pre-commit-vscode",
+                "ms-python.python",
+                "vue.vscode-typescript-vue-plugin",
+                "toba.vsfire",
+                "vue.volar"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/usr/bin/zsh"
+            }
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:1": {
+            "version": "latest",
+            "installZsh": true,
+            "installOhMyZsh": true,
+            "upgradePackages": true,
+            "username": "vscode"
+        },
+        "ghcr.io/devcontainers/features/terraform:1": {
+            "version": "1.5.0",
+            "terragrunt": "0.46.3",
+            "installTerraformDocs": true
+        }
+    }
+}
